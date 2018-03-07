@@ -1,0 +1,56 @@
+﻿<!-- Resources -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <a class="navbar-brand" href="#">Dashboard</a>
+    <a class="navbar-brand pull-right" [routerLink]="['/login']">Logout</a>
+
+  </nav>
+
+  <div class="container">
+
+    <div class="starter-template">
+      <h1>Overview</h1>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-block">
+                <h4 class="card-title">Card title</h4>
+                    <div id="donut"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-block">
+                <h4 class="card-title">Card title</h4>
+                    chart
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br>
+
+    <div class="starter-template">
+        <h1>User List</h1>
+
+    </div>
+
+  </div><!-- /.container -->
+
+<!-- <div class="col-md-6 col-md-offset-3">
+    <h1>Hi {{currentUser.firstName}}!</h1>
+    <p>You're logged in with Angular 2!!</p>
+    <h3>All registered users:</h3>
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.username}} ({{user.firstName}} {{user.lastName}})
+            - <a (click)="deleteUser(user.id)">Delete</a>
+        </li>
+    </ul>
+    <p><a [routerLink]="['/login']">Logout</a></p>
+</div> -->
