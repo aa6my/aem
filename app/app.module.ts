@@ -16,13 +16,15 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
+// import { AmChartsModule } from "@amcharts/amcharts3-angular";
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        routing
+        routing,
+        // AmChartsModule
     ],
     declarations: [
         AppComponent,

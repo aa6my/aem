@@ -2,7 +2,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../_models/index';
 import { UserService } from '../_services/index';
-import { AmChartsModule } from "@amcharts/amcharts3-angular";
+// import { AmChartsService, AmChart } from "@amcharts/amcharts3-angular";
 
 @Component({
     moduleId: module.id,
@@ -11,32 +11,33 @@ import { AmChartsModule } from "@amcharts/amcharts3-angular";
 })
 
 export class HomeComponent implements OnInit {
-    private chart: any;
+    // private chart: AmChart;
     currentUser: User;
     users: User[] = [];
-
-    constructor(private userService: UserService, private http: HttpClient, private AmCharts: AmChartsService) {
+    //private AmCharts: AmChartsService
+    constructor(private userService: UserService, private http: HttpClient) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
      }
 
     ngOnInit() {
         this.loadAllUsers();
         this.http.get('http://52.76.7.57:3000/api/dashboard').subscribe(data => {
-            this.chart = this.AmCharts.makeChart("donut", {
-                "type": "pie",
-                "theme": "light",
-                "dataProvider": data['chartDonut'],
-                "titleField": "country",
-                "valueField": "litres",
-                "labelRadius": 5,
-              
-                "radius": "42%",
-                "innerRadius": "60%",
-                "labelText": "[[title]]",
-                "export": {
-                  "enabled": true
-                }
-            });
+            console.log(data);
+            // this.chart = this.AmCharts.makeChart("chartdiv", {
+            //     "type": "pie",
+            //     "theme": "light",
+            //     "dataProvider": data['chartDonut'],
+            //     "titleField": "title",
+            //     "valueField": "value",
+            //     "labelRadius": 5,
+        
+            //     "radius": "42%",
+            //     "innerRadius": "60%",
+            //     "labelText": "[[title]]",
+            //     "export": {
+            //         "enabled": true
+            //     }
+            //   });
         });
     }
 
